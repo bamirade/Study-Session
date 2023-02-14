@@ -1,0 +1,437 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  height: 50px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+  
+}
+.top-bar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 12px;
+  display: block;
+}
+.top-bar a:hover {
+  background-color: black;
+}
+.burger-button {
+  display: none;
+  cursor: pointer;
+  position:absolute;
+  left: 20px;
+}
+.burger-button span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  width: 26px;
+}
+
+
+.side-bar-container {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.side-bar {
+  display: flex;
+  flex-direction: column;
+}
+.side-bar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 12px;
+  display: block;
+}
+.side-bar a:hover {
+  background-color: #444;
+}
+.exit-button {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 12px;
+  display: block;
+}
+.exit-button:hover {
+  background-color: #444;
+}
+
+#main {
+  background-color: black;
+}
+
+#title {
+  font-size: 84px;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+#topbar-title {
+  font-size: 24px;
+}
+
+#home {
+  max-height: 1600px;
+  min-height: 480px;
+  background-color: #444;
+}
+
+#img-div {
+  position: absolute;
+  top: 0;
+  right: 9px;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+#img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top: none;
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+}
+
+#img-caption {
+  position: absolute;
+  top: 10%;
+  color: black;
+  font-size: 16px;
+  width: 50%;
+  text-align: center;
+}
+
+#tribute-intro {
+  color: #000;
+}
+
+#bio {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+}
+
+#biography {
+  display: inline-block;
+  position: sticky;
+  color: #fff;
+  width: 50%;
+  top: 25%;
+}
+
+.video-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#discs {
+  max-height: 1600px;
+  min-height: 480px;
+  background-color: #444;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+section ul {
+  display: flex; 
+  flex-wrap: nowrap; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section li {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+section li.current {
+  display: inline-block;
+}
+
+section ul {
+  white-space: nowrap;
+}
+
+section img {
+  height: 150px;
+  width: relative;
+  vertical-align: top;
+}
+
+#discography ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#discography ul li p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#discography ul li img:hover {
+  opacity: 0.7;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.pagination button:hover {
+  background-color: #f5f5f5;
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+#discs {
+  max-height: 1600px;
+  min-height: 480px;
+  background-color: #444;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section h2 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section li {
+  width: 30%;
+  margin: 20px;
+  text-align: center;
+}
+
+section li.current {
+  display: inline-block;
+}
+
+section ul {
+  white-space: nowrap;
+}
+
+section img {
+   width: 150px;
+    height: 150px;
+}
+
+.album-title {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.pagination button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+@media screen and (max-width: 991px) {
+  .top-bar {
+    flex-direction: column;
+  }
+  .top-bar a {
+     display: none;
+  }
+  .top-bar .burger-button {
+    display: block;
+  }
+  .side-bar-container.show {
+    left: 0;
+  }
+  .bio-container {
+   flex-direction: column;
+  }
+  #topbar-title {
+   display: inline-block;
+  }
+  #title {
+    position: relative;
+    align-self: left;
+   font-size: 78;
+  }
+  #home {
+    height: 100vh;
+    background-image: url(media/Top.png);
+   background-size: cover;
+  }
+  #bio {
+   height: 100vh;
+  }
+  #discs {
+   height: 100vh;
+    background-color: #444;
+  }
+  #img-caption {
+    position: relative;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+  }
+  #img-div {
+    display: none;
+  }
+  #tribute-intro {
+   background-color: rgba(87,87,87,.7);
+    color: #000;
+  }
+
+
+  section ul {
+   font-size: 11px;
+   inline-size: auto;
+  }
+
+  section img {
+   height: 100px;
+   width: 100px;
+   vertical-align: top;
+  }
+  #biography {
+   font-size: 11px;
+  }
+
+  .video-container {
+   width: 100%;
+  } 
+  
+  #bio p {
+   font-size: 11px;
+  }
+  p {
+  font-size: 12px;
+}
+
+  .discography {
+      display: block;
+    }
+  
+    .album:not(:first-child) {
+      display: none;
+    }
+
+

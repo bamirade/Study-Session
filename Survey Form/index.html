@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doodle Cat Survey</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="media/tb.png" />
+</head>
+<div class="topbar">
+    <img src="media/icon1.png" class="logo">
+    <h1 class="title">The Cat Survey</h1>
+  </div>
+<div class="bg"></div>
+<div class="content">
+	<div id="catainer">
+	<img id="spook" src="media/spook.png" alt="spook">
+</div>
+  <form id="survey-form" method="get">
+
+    <div class="page page-1 active">
+      <h1 id="title">Cat Survey</h1>
+      <p id="description">We want to learn more about cats and their owners. Please take a few minutes to fill out this survey.</p>
+      <label for="name" id="name-label">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name.." required>
+	  <div class="error-message" placeholder="This field is required."></div>
+
+      <label for="email" id="email-label">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address.." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+	  <div class="error-message" placeholder="Please enter a valid email address."></div>
+
+      <label for="number" id="number-label">Age</label>
+      <input type="number" id="number" name="number" placeholder="Your age.." min="0" max="100" pattern="[0-9]*" required>
+	  <div class="error-message" placeholder="Please enter a valid age."></div>
+
+      <button type="button" class="next-button">Next</button>
+    </div>
+
+
+<div class="page page-2">
+	<label for="dropdown">What breed is your cat?</label>
+	<select id="dropdown" name="dropdown">
+    <option value="sphynx">Sphynx</option>
+	  <option value="persian">Persian</option>
+	  <option value="siamese">Siamese</option>
+	  <option value="ragdoll">Ragdoll</option>
+	  <option value="other">Other</option>
+	</select>
+  
+	<p>What is your cat's gender?</p>
+	<label for="male">Male</label>
+	<input type="radio" id="male" name="gender" value="male" required checked>
+	<label for="female">Female</label>
+	<input type="radio" id="female" name="gender" value="female" required>
+	<div class="gender-error-message" style="display:none">Please select a gender</div>
+
+	<p>Do you own any of the following?</p>
+	<label for="toys">Cat toys</label>
+	<input type="checkbox" id="toys" name="toys" value="toys">
+	<label for="litter-box">Litter box</label>
+	<input type="checkbox" id="litter-box" name="litter-box" value="litter-box">
+	<label for="scratching-post">Scratching post</label>
+	<input type="checkbox" id="scratching-post" name="scratching-post" value="scratching-post">
+
+	<button type="button" class="prev-button">Prev</button>
+	<button type="button" class="next-button">Next</button>
+</div>
+
+
+<div class="page page-3">
+	<label for="comments">Do you have any comments or feedback about your cat?</label>
+	<textarea id="comments" name="comments" placeholder="Write something.." style="height:200px"></textarea>
+  
+	<button type="button" class="prev-button">Prev</button>
+	<button type="submit" class="submit-button">Submit</button>
+  </div>
+
+
+  <div class="page page-success">
+	<h1>Thank you for submitting the form!</h1>
+	<p>Your data has been saved and will be used to help us learn more about cats and their owners.</p>
+
+	<div id="reviewModal" class="modal">
+
+		<div class="modal-content">
+		  <div class="modal-header">
+			<span class="close- modal">&times;</span>
+			<h2>Review Form Data</h2>
+		  </div>
+		  <div class="modal-body">
+			<div id="display-data"></div>
+		  </div>
+		  <div class="modal-footer">
+			<button class="close-modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+
+	<button class="review-button" onclick="reviewForm()">Review</button>
+    <button class="restart-button"onClick="window.location.reload();">Restart</button>
+  </div>
+</form>
+<div id="progress-bar">
+	<div id="progress"></div>
+  </div>
+</div>
+<div id="terms-and-conditions-modal" class="modal">
+	<div class="modal-content">
+	  <span class="close-modal">&times;</span>
+	  <h2>Terms and Conditions</h2>
+	  <p>Introduction: These terms and conditions govern your use of the cat survey website (the "Website"). By accessing or using the Website, you agree to be bound by these terms and conditions. If you do not agree to these terms, you may not use the Website.
+
+		Eligibility: By using the Website, you represent and warrant that you are at least 18 years of age and that you have the legal capacity to agree to these terms and conditions.
+		
+		Information Collection and Use: By using the Website, you consent to the collection and use of your personal information as described in our Privacy Policy.
+		
+		Prohibited Uses: You may not use the Website for any illegal or unauthorized purpose. You may not access or use the Website in any way that could harm, disable, overburden, or impair the Website or any servers or networks connected to the Website. You may not attempt to gain unauthorized access to any portion of the Website or any other computer systems or networks connected to the Website.
+		
+		Intellectual Property: The Website and its content, including but not limited to text, images, software, and trademarks, are protected by intellectual property laws. You may not use any content from the Website without express written permission from the Website's owner.
+		
+		Disclaimer: The Website is provided "as is" and the owner of the Website makes no representations or warranties of any kind, express or implied, as to the operation of the Website or the information, content, materials, or products included on the Website.
+		
+		Limitation of Liability: The owner of the Website shall not be liable for any damages of any kind arising from the use of the Website, including but not limited to direct, indirect, incidental, punitive, and consequential damages.
+		
+		Indemnification: You agree to indemnify and hold the owner of the Website, and its affiliates, officers, agents, and employees, harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your use of the Website, your violation of these terms and conditions, or your violation of any rights of another.
+		
+		Governing Law: These terms and conditions and your use of the Website shall be governed by and construed in accordance with the laws of the country of the Website's owner, without giving effect to any principles of conflicts of law.
+		
+		Changes to these terms: The owner of the Website reserves the right, at its sole discretion, to change, modify, add, or remove any portion of these terms and conditions, in whole or in part, at any time. Your continued use of the Website following the posting of changes to these terms and conditions will mean that you accept those changes.
+	
+		Termination: The owner of the Website reserves the right, at its sole discretion, to terminate your access to the Website or any portion thereof, at any time, without notice.
+
+		Severability: If any provision of these terms and conditions is found to be invalid or unenforceable, the remaining provisions will continue to be valid and enforceable.
+
+		Entire Agreement: These terms and conditions constitute the entire agreement between you and the owner of the Website with respect to the use of the Website.
+
+		Survey Responses: By participating in the cat survey, you understand that your responses may be used for research and analysis purposes. Any personal information collected will be kept confidential and will not be shared with third parties without your consent.
+
+		Contact Us: If you have any questions about these terms and conditions, please contact us via email
+		
+		None of these apply as its for educational purpose only**</p>
+	</div>
+  </div>
+  
+  <div id="privacy-policy-modal" class="modal">
+	<div class="modal-content">
+	  <span class="close-modal">&times;</span>
+	  <h2>Privacy Policy</h2>
+	  <p>Privacy Policy
+
+		This Privacy Policy governs the collection, use, and disclosure of personal information by the cat survey website (the "Website"). By using the Website, you consent to the collection and use of your personal information as described in this Privacy Policy.
+		
+		Information Collection
+		
+		The Website collects personal information from users who participate in the cat survey. This information includes, but is not limited to, the user's name, email address, age, and responses to the survey questions.
+		
+		Use of Information
+		
+		The personal information collected by the Website is used for research and analysis purposes. The Website may use this information to better understand cat ownership and the preferences of cat owners. Any personal information collected will be kept confidential and will not be shared with third parties without your consent.
+		
+		Data Security
+		
+		The Website takes measures to protect the personal information collected from unauthorized access, use, or disclosure. However, no internet-based service can be completely secure, and the Website cannot guarantee the security of user information.
+		
+		Changes to this Privacy Policy
+		
+		The Website reserves the right to change this Privacy Policy at any time. Any changes will be posted on this page.
+		
+		Contact Us
+		
+		If you have any questions about this Privacy Policy, please contact us via email
+		
+		By using this website, you acknowledge that you have read and understand this Privacy Policy and that you agree to be bound by it.
+	
+		None of these apply as its for educational purpose only**
+	</p>
+	</div>
+  </div>
+<div id="reviewModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Review Form Data</h2>
+      </div>
+      <div class="modal-body">
+        <div id="display-data"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-modal" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+	<p class="trademark">&copy;2023 The Cat Survey</p>
+	<a href="#" class="terms-and-conditions" id="terms-and-conditions-link">Terms and Conditions</a>
+	<a href="#" class="privacy-policy" id="privacy-policy-link">Privacy Policy</a>
+  </div>
+  
+<script src="script.js"></script>
+</html>

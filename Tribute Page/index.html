@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Kendrick Lamar Tribute Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+ <body id="main">
+
+  <div class="top-bar">
+    <a href="#bio" onclick="scrollToSection('bio')">Biography</a>
+    <a id="topbar-title" href="#home" onclick="scrollToSection('home')">Kendrick Lamar</a>
+    <a href="#discs" onclick="scrollToSection('discs')">Discography</a>
+    <div class="burger-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+
+  <div class="side-bar-container">
+
+    <div class="side-bar">
+      <a href="#home" onclick="scrollToSection('home')">Home</a>
+      <a href="#bio" onclick="scrollToSection('bio')">Biography</a>
+      <a href="#discs" onclick="scrollToSection('discs')">Discography</a>
+    </div>
+  </div>
+  
+
+  <div id="home">
+    <div id="img-div">
+        <img src="media/Top.png" id="image" style="width: 500px; height: 500px;">
+    </div>
+    <div id="img-caption">
+      <h1 id="title">Kendrick Lamar</h1>
+      <p id="tribute-intro">Kendrick Lamar Duckworth is a Pulitzer Prize-winning rapper and songwriter known for his socially conscious lyrics and innovative style. He has released several critically acclaimed albums and has won numerous awards, including 13 Grammy Awards.</p>
+    </div>
+</div>
+  <div id="bio">
+      <section id="biography">
+        <h2>Biography</h2>
+        <p>Kendrick Lamar was born on June 17, 1987 in Compton, California. Growing up in a city plagued by gang violence, Lamar was exposed to the harsh realities of life at a young age. Despite this, he excelled academically and was a member of the debate team in high school. He began rapping at the age of 16, and quickly gained a following with his mix of insightful lyrics and catchy beats.</p>
+
+        <p>Lamar released his first independent album, "Overly Dedicated," in 2010, which caught the attention of record labels and critics alike. In 2012, he released his major label debut "good kid, m.A.A.d city," which earned widespread critical acclaim and solidified his place in the rap industry. Since then, he has released three more albums - "To Pimp a Butterfly," "DAMN," and "untitled unmastered." - all of which have received critical acclaim and earned Lamar numerous awards, including multiple Grammy Awards.</p>
+        
+        <p>In addition to his music, Lamar is also known for his activism and social commentary. He often uses his platform to address issues of race, inequality, and social justice, and has been praised for his thought-provoking and nuanced approach to these topics. He has also been involved in various charitable endeavors, including working with the non-profit organization American Cancer Society to raise awareness about cancer prevention.</p>
+        
+        <a id="tribute-link" href="https://oklama.com/" target="_blank" style="color: rgb(108,55,68)">Learn more about Kendrick Lamar</a>
+      </section>
+    <div class="video-container">
+      <video src="media/Kendrick Lamar.mp4" id="bio-preview" controls></video>
+    </div>
+  </div>
+</div>
+  <div id="discs">
+    <section id="discography">
+      <h2>Discography</h2>
+      <ul>
+        <li>
+          <img src="media/Mr. Morale & the Big Steppers.jpg" alt="Mr. Morale & the Big Steppers">
+          <p>Mr. Morale & the Big Steppers</p>
+        </li>
+        <li>
+          <img src="media/DAMN..png" alt="DAMN.">
+          <p>DAMN.</p>
+        </li>
+        <li>
+          <img src="media/Untitled Unmastered.jpg" alt="Untitled Unmastered">
+          <p>untitled unmastered.</p>
+        </li>
+        <li>
+          <img src="media/To Pimp a Butterfly.png" alt="To Pimp a Butterfly">
+          <p>To Pimp a Butterfly</p>
+        </li>
+        <li>
+          <img src="media/good kid, m.A.A.d city.png" alt="good kid, m.A.A.d city">
+          <p>good kid, m.A.A.d city</p>
+        </li>
+        <li>
+          <img src="media/Section.80.jpg" alt="Section.80">
+          <p>Section.80</p>
+        </li>
+        <li>
+          <img src="media/Overly Dedicated.jpg" alt="Overly Dedicated">
+          <p>Overly Dedicated</p>
+        </li>
+      </ul>
+      <div class="pagination">
+          <button id="prev">Previous</button>
+          <button id="next">Next</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <script src="script.js"></script>
+  
+ <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+</body>
+
+</html>
