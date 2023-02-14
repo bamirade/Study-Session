@@ -1,2 +1,2 @@
 # Study-Session
-Works for the purpose of coding education
+Works for the purpose of code learning
