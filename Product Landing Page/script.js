@@ -51,25 +51,3 @@ const checkVisibility = () => {
 }
 
 window.addEventListener('scroll', checkVisibility);
-
-// Select a single element
-const banner = document.getElementById('banner');
-
-// Select multiple elements
-const navLinks = document.querySelectorAll('nav a');
-const featuresList = document.querySelectorAll('#features li');
-
-// Modify an element's text
-banner.querySelector('h1').textContent = 'New Product Name';
-
-// Modify an element's styles
-banner.style.backgroundColor = '#f0f0f0';
-
-// Add a button and event listener for button clicks
-const btn = document.createElement('button');
-btn.textContent = 'Click Me';
-banner.appendChild(btn);
-
-btn.addEventListener('click', function() {
-  alert('Button Clicked!');
-});
