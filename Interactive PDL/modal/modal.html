@@ -1,0 +1,214 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </link>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      overflow-y: hidden;
+    }
+
+    body {
+      background: transparent;
+    }
+
+    .app {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      height: 100%;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .app .controls {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background: #ddd;
+      padding: 0px 10px;
+    }
+
+    .app .controls .title {
+      font-weight: 600;
+      color: #ea0095;
+      width: 80px;
+    }
+
+    .app .controls .type,
+    .app .controls .size,
+    .app .controls .color {
+      margin: 0px 10px;
+    }
+
+    .app .controls .type input {
+      display: none;
+    }
+
+    .app .controls .type label {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+      margin: 0px 2px;
+      cursor: pointer;
+    }
+
+    .app .controls .type input:checked+label {
+      background: #ea0095;
+      color: #eee;
+      border-radius: 50%;
+    }
+
+    .app .controls .size input {
+      height: 10px;
+    }
+
+    .app .controls .actions {
+      flex: 1;
+      text-align: right;
+    }
+
+    .app .controls .actions button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]:focus {
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      background: #ea0095;
+    }
+
+    input[type="range"]::-moz-range-track {
+      background: #ea0095;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 15px;
+      width: 15px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      height: 15px;
+      width: 15px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    button {
+      background-color: #ea0095;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="controls">
+      <div class="title">
+        Pixelgram Demo
+      </div>
+      <div class="type">
+        <input type="radio" name="pen-type" id="pen-pencil" checked>
+        <label for="pen-pencil">
+          <i class="fa fa-pencil">
+          </i>
+        </label>
+        <input type="radio" name="pen-type" id="pen-brush">
+        <label for="pen-brush">
+          <i class="fa fa-paint-brush">
+          </i>
+        </label>
+      </div>
+      <div class="size">
+        <label for="pen-size">
+          Size
+        </label>
+        <input type="range" id="pen-size" min="1" max="50">
+      </div>
+      <div class="color">
+        <label for="pen-color">
+          Color
+        </label>
+        <input type="color" id="pen-color" value="#ea0095">
+      </div>
+      <div class="actions">
+        <button id="reset-canvas">
+          Reset
+        </button>
+        <button id="save-canvas">
+          Save
+        </button>
+      </div>
+    </div>
+    <div id="canvas-wrapper">
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js">
+</script>
+<script>
+  function _(selector) {
+    return document.querySelector(selector);
+  }
+
+  let backgroundImage;
+
+  function preload() {
+    backgroundImage = loadImage("ico.png");
+  }
+
+  function setup() {
+    let canvas = createCanvas(650, 600);
+    canvas.parent("canvas-wrapper");
+    background(backgroundImage);
+  }
+
+  function mouseDragged() {
+    let type = _("#pen-pencil").checked ? "pencil" : "brush";
+    let size = parseInt(_("#pen-size").value);
+    let color = _("#pen-color").value;
+    fill(color);
+    stroke(color);
+    if (type == "pencil") {
+      line(pmouseX, pmouseY, mouseX, mouseY);
+    } else {
+      ellipse(mouseX, mouseY, size, size);
+    }
+  }
+
+  _("#reset-canvas").addEventListener("click",
+    function () {
+      background(255);
+      image(backgroundImage, 0, 0, width, height);
+      noTint();
+    });
+
+  _("#save-canvas").addEventListener("click",
+    function () {
+      saveCanvas(canvas, "sketch", "png");
+    });
+</script>
+
+</html>
