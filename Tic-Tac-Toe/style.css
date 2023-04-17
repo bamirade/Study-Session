@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgba(85, 91, 255, 0.5) 0%, rgba(85, 91, 255, 0.5) 20%, rgba(31, 193, 27, 0.5) 20%, rgba(31, 193, 27, 0.5) 40%, rgba(255, 217, 19, 0.5) 40%, rgba(255, 217, 19, 0.5) 60%, rgba(255, 156, 85, 0.5) 60%, rgba(255, 156, 85, 0.5) 80%, rgba(255, 85, 85, 0.5) 80%, rgba(255, 85, 85, 0.5) 100%);
+    background-size: 100% 20%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 500px;
+}
+
+.crt {
+    margin: 3vmin auto;
+    padding: 5.5vmin;
+    padding-bottom: 10vmin;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3f3933;
+    border-radius: 0.5rem;
+}
+
+.screen {
+    position: relative;
+    border: 30px solid transparent;
+    border-image-source: url('./media/screen.png');
+    border-image-slice: 30 fill;
+    border-image-outset: 0;
+    overflow: hidden;
+    display: none;
+    width: 560px;
+    height: 560px;
+    font-family: 'VT323';
+    color: green;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.screen button {
+    background: none;
+    border: none;
+    color: green;
+    font-family: 'VT323';
+}
+
+.screen.one {
+    display: flex;
+}
+
+.buttcont {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.screen.ghistory,
+.screen.gmoves{
+    display: none;
+    color: green;
+}
+
+.screen.two button {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.screen.two button {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.screen.four img {
+    background: none;
+    height: 200px;
+    width: 200px;
+}
+
+.ghistory,
+.gmoves,
+.reresult {
+    display: block;
+}
+
+.prev,
+.prevv {
+    left: 25%;
+}
+
+.game,
+.histories,
+.moves {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 500px;
+    aspect-ratio: 1/1;
+    max-height: 90vh;
+}
+
+.container,
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: rgba(4, 4, 4, 1);
+    border-radius: 0px;
+    border: 3px solid green;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hbutton,
+.mbutton {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.container.one,
+.cell.d00,
+.cell.f00 {
+    border-top: none;
+    border-left: none;
+}
+
+.container.two,
+.cell.d01,
+.cell.f01 {
+    border-top: none;
+}
+
+.container.three,
+.cell.d02,
+.cell.f02 {
+    border-top: none;
+    border-right: none;
+}
+
+.container.four,
+.cell.d10,
+.cell.f10 {
+    border-left: none;
+}
+
+.container.six,
+.cell.d12,
+.cell.f12 {
+    border-right: none;
+}
+
+.container.seven,
+.cell.d20,
+.cell.f20 {
+    border-left: none;
+    border-bottom: none;
+}
+
+.container.eight,
+.cell.d21,
+.cell.f21 {
+    border-bottom: none;
+}
+
+.container.nine,
+.cell.d22,
+.cell.f22 {
+    border-right: none;
+    border-bottom: none;
+}
+
+.container:hover {
+    background-color: #bbb;
+}
+
+.container.x::before {
+    content: "X";
+    color: green;
+}
+
+.container.o::before {
+    content: "O";
+    color: green;
+}
+
+.controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    top: 30px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.history {
+    background-color: #f2c14e;
+    color: #333;
+}
+
+.play {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.controls button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.crtbuttonone {
+    display: flex;
+}
+
+.crtbuttontwo {
+    display: flex;
+}
+
+#label-one {
+    position: absolute;
+    overflow-y: hidden;
+    top: -25px;
+}
+
+#label-two {
+    position: absolute;
+    overflow-y: hidden;
+    top: -25px;
+}
+
+.pl,
+.re {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen.two #my-cpu {
+    display: none;
+}
+
+.cpu-image {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(./media/NCPU.png);
+    background-size: contain;
+}
+
+.screen.two #my-cpu:checked+.cpu-image {
+    background-image: url(./media/CPU.png);
+    background-size: contain;
+}
+
+@font-face {
+    font-family: 'VT323';
+    src: url('./media/VT323-Regular.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

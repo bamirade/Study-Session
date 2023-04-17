@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./media/ico.png">
+</head>
+
+<body>
+    <main>
+        <div class="crt">
+            <div class="screen one">
+                <h1 class="intro">Tic-Tac-Toe</h1>
+                <p class="introtxt">Press any key to play</p>
+            </div>
+            <div class="screen two">
+                <button class="x">Play X</button>
+                <button class="o">Play O</button>
+                <label for="my-cpu">
+                    <input type="checkbox" id="my-cpu">
+                    <span class="cpu-image"></span>
+                  </label>
+            </div>
+            <div class="screen three">
+                <div class="game">
+                    <div class="container one"></div>
+                    <div class="container two"></div>
+                    <div class="container three"></div>
+                    <div class="container four"></div>
+                    <div class="container five"></div>
+                    <div class="container six"></div>
+                    <div class="container seven"></div>
+                    <div class="container eight"></div>
+                    <div class="container nine"></div>
+                </div>
+            </div>
+            <div class="screen four">
+                <h1 class="condition"></h1>
+                <div class="buttcont">
+                    <div class="pl">
+                        <button class="again">
+                            <img src="./media/Play.png" class="play" alt="play-again">
+                        </button>
+                        <p>Play again</p>
+                    </div>
+                    <div class="re" onclick="showMovesScreen()">
+                        <button class="replay">
+                            <img src="./media/Replay.png" class="replay" alt="replay-again">
+                        </button>
+                        <p>Replay</p>
+                    </div>
+                </div>
+            </div>
+            <div class="screen gmoves">
+                <div class="moves">
+                </div>
+                <div class="mbutton">
+                    <button class="prevv">Prev</button>
+                    <p class="reresult"></p>
+                    <button class="nextt">Next</button>
+                </div>
+            </div>
+            <div class="screen ghistory">
+                <div class="histories">
+                </div>
+                <div class="hbutton">
+                    <button class="prev">Prev</button>
+                    <p class="ghistory">You have no game history</p>
+                    <button class="next">Next</button>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="crtbuttonone">
+                    <button class="history" onclick="showHistoryScreen()"></button>
+                    <div>
+                        <img src="./media/stickyone.png" id="label-one" alt="labelone" height="75px" z-index="1"
+                            overflow="hidden">
+                    </div>
+                </div>
+                <div class="crtbuttontwo">
+                    <button class="play" onclick="showScreenOne()"></button>
+                    <div>
+                        <img src="./media/stickytwo.png" id="label-two" alt="labeltwo" height="75px" overflow="hidden">
+                    </div>
+                </div>
+                <span class="power-slider"></span>
+            </div>
+        </div>
+        <audio controls autoplay loop hidden volume="0.10">
+            <source src="./media/retro.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>
